@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'dart:convert';
 
-part 'update_products_model.g.dart';
+part 'update_product_response_model.g.dart';
 
 @JsonSerializable()
-class UpdateProductsModel {
+class UpdateProductResponseModel {
     @JsonKey(name: "id")
     int? id;
     @JsonKey(name: "title")
@@ -28,7 +28,7 @@ class UpdateProductsModel {
     @JsonKey(name: "category")
     String? category;
 
-    UpdateProductsModel({
+    UpdateProductResponseModel({
         this.id,
         this.title,
         this.price,
@@ -42,7 +42,7 @@ class UpdateProductsModel {
         this.category,
     });
 
-    factory UpdateProductsModel.fromJson(Map<String, dynamic> json) => _$UpdateProductsModelFromJson(json);
+    factory UpdateProductResponseModel.fromJson(Map<String, dynamic> json) => _$UpdateProductResponseModelFromJson(json);
 
-    Map<String, dynamic> toJson() => _$UpdateProductsModelToJson(this);
+    Map<String, dynamic> toJson() => _$UpdateProductResponseModelToJson(this);
 }

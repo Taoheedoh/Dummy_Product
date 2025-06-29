@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'dart:convert';
 
-part 'delete_products_model.g.dart';
+part 'delete_product_response_model.g.dart';
 
 @JsonSerializable()
-class DeleteProductsModel {
+class DeleteProductResponseModel {
     @JsonKey(name: "id")
     int? id;
     @JsonKey(name: "title")
@@ -30,7 +30,7 @@ class DeleteProductsModel {
     @JsonKey(name: "weight")
     int? weight;
     @JsonKey(name: "dimensions")
-    Dimensions? dimensions;
+    double? dimensions;
     @JsonKey(name: "warrantyInformation")
     String? warrantyInformation;
     @JsonKey(name: "shippingInformation")
@@ -38,13 +38,13 @@ class DeleteProductsModel {
     @JsonKey(name: "availabilityStatus")
     String? availabilityStatus;
     @JsonKey(name: "reviews")
-    List<Review>? reviews;
+    List<String>? reviews;
     @JsonKey(name: "returnPolicy")
     String? returnPolicy;
     @JsonKey(name: "minimumOrderQuantity")
     int? minimumOrderQuantity;
     @JsonKey(name: "meta")
-    Meta? meta;
+    String? meta;
     @JsonKey(name: "images")
     List<String>? images;
     @JsonKey(name: "thumbnail")
@@ -54,7 +54,7 @@ class DeleteProductsModel {
     @JsonKey(name: "deletedOn")
     DateTime? deletedOn;
 
-    DeleteProductsModel({
+    DeleteProductResponseModel({
         this.id,
         this.title,
         this.description,
@@ -81,13 +81,13 @@ class DeleteProductsModel {
         this.deletedOn,
     });
 
-    factory DeleteProductsModel.fromJson(Map<String, dynamic> json) => _$DeleteProductsModelFromJson(json);
+    factory DeleteProductResponseModel.fromJson(Map<String, dynamic> json) => _$DeleteProductResponseModelFromJson(json);
 
-    Map<String, dynamic> toJson() => _$DeleteProductsModelToJson(this);
+    Map<String, dynamic> toJson() => _$DeleteProductResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class Dimensions {
+class DeleteProductResponseModelDimensions {
     @JsonKey(name: "width")
     double? width;
     @JsonKey(name: "height")
@@ -95,19 +95,19 @@ class Dimensions {
     @JsonKey(name: "depth")
     double? depth;
 
-    Dimensions({
+    DeleteProductResponseModelDimensions({
         this.width,
         this.height,
         this.depth,
     });
 
-    factory Dimensions.fromJson(Map<String, dynamic> json) => _$DimensionsFromJson(json);
+    factory DeleteProductResponseModelDimensions.fromJson(Map<String, dynamic> json) => _$DeleteProductResponseModelDimensionsFromJson(json);
 
-    Map<String, dynamic> toJson() => _$DimensionsToJson(this);
+    Map<String, dynamic> toJson() => _$DeleteProductResponseModelDimensionsToJson(this);
 }
 
 @JsonSerializable()
-class Meta {
+class DeleteProductResponseModelMeta {
     @JsonKey(name: "createdAt")
     DateTime? createdAt;
     @JsonKey(name: "updatedAt")
@@ -117,20 +117,20 @@ class Meta {
     @JsonKey(name: "qrCode")
     String? qrCode;
 
-    Meta({
+    DeleteProductResponseModelMeta({
         this.createdAt,
         this.updatedAt,
         this.barcode,
         this.qrCode,
     });
 
-    factory Meta.fromJson(Map<String, dynamic> json) => _$MetaFromJson(json);
+    factory DeleteProductResponseModelMeta.fromJson(Map<String, dynamic> json) => _$DeleteProductResponseModelMetaFromJson(json);
 
-    Map<String, dynamic> toJson() => _$MetaToJson(this);
+    Map<String, dynamic> toJson() => _$DeleteProductResponseModelMetaToJson(this);
 }
 
 @JsonSerializable()
-class Review {
+class DeleteProductResponseModelReview {
     @JsonKey(name: "rating")
     int? rating;
     @JsonKey(name: "comment")
@@ -142,7 +142,7 @@ class Review {
     @JsonKey(name: "reviewerEmail")
     String? reviewerEmail;
 
-    Review({
+    DeleteProductResponseModelReview({
         this.rating,
         this.comment,
         this.date,
@@ -150,7 +150,7 @@ class Review {
         this.reviewerEmail,
     });
 
-    factory Review.fromJson(Map<String, dynamic> json) => _$ReviewFromJson(json);
+    factory DeleteProductResponseModelReview.fromJson(Map<String, dynamic> json) => _$DeleteProductResponseModelReviewFromJson(json);
 
-    Map<String, dynamic> toJson() => _$ReviewToJson(this);
+    Map<String, dynamic> toJson() => _$DeleteProductResponseModelReviewToJson(this);
 }

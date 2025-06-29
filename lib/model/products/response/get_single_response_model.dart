@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'dart:convert';
 
-part 'view_single_product_model.g.dart';
+part 'get_single_response_model.g.dart';
 
 @JsonSerializable()
-class ViewSingleProductModel {
+class GetSingleResponseModel {
     @JsonKey(name: "id")
     int? id;
     @JsonKey(name: "title")
@@ -30,7 +30,7 @@ class ViewSingleProductModel {
     @JsonKey(name: "weight")
     int? weight;
     @JsonKey(name: "dimensions")
-    Dimensions? dimensions;
+    double? dimensions;
     @JsonKey(name: "warrantyInformation")
     String? warrantyInformation;
     @JsonKey(name: "shippingInformation")
@@ -38,19 +38,19 @@ class ViewSingleProductModel {
     @JsonKey(name: "availabilityStatus")
     String? availabilityStatus;
     @JsonKey(name: "reviews")
-    List<Review>? reviews;
+    List<String>? reviews;
     @JsonKey(name: "returnPolicy")
     String? returnPolicy;
     @JsonKey(name: "minimumOrderQuantity")
     int? minimumOrderQuantity;
     @JsonKey(name: "meta")
-    Meta? meta;
+    String? meta;
     @JsonKey(name: "images")
     List<String>? images;
     @JsonKey(name: "thumbnail")
     String? thumbnail;
 
-    ViewSingleProductModel({
+    GetSingleResponseModel({
         this.id,
         this.title,
         this.description,
@@ -75,13 +75,13 @@ class ViewSingleProductModel {
         this.thumbnail,
     });
 
-    factory ViewSingleProductModel.fromJson(Map<String, dynamic> json) => _$ViewSingleProductModelFromJson(json);
+    factory GetSingleResponseModel.fromJson(Map<String, dynamic> json) => _$GetSingleResponseModelFromJson(json);
 
-    Map<String, dynamic> toJson() => _$ViewSingleProductModelToJson(this);
+    Map<String, dynamic> toJson() => _$GetSingleResponseModelToJson(this);
 }
 
 @JsonSerializable()
-class Dimensions {
+class GetSingleResponseModelDimensions {
     @JsonKey(name: "width")
     double? width;
     @JsonKey(name: "height")
@@ -89,19 +89,19 @@ class Dimensions {
     @JsonKey(name: "depth")
     double? depth;
 
-    Dimensions({
+    GetSingleResponseModelDimensions({
         this.width,
         this.height,
         this.depth,
     });
 
-    factory Dimensions.fromJson(Map<String, dynamic> json) => _$DimensionsFromJson(json);
+    factory GetSingleResponseModelDimensions.fromJson(Map<String, dynamic> json) => _$GetSingleResponseModelDimensionsFromJson(json);
 
-    Map<String, dynamic> toJson() => _$DimensionsToJson(this);
+    Map<String, dynamic> toJson() => _$GetSingleResponseModelDimensionsToJson(this);
 }
 
 @JsonSerializable()
-class Meta {
+class GetSingleResponseModelMeta {
     @JsonKey(name: "createdAt")
     DateTime? createdAt;
     @JsonKey(name: "updatedAt")
@@ -111,20 +111,20 @@ class Meta {
     @JsonKey(name: "qrCode")
     String? qrCode;
 
-    Meta({
+    GetSingleResponseModelMeta({
         this.createdAt,
         this.updatedAt,
         this.barcode,
         this.qrCode,
     });
 
-    factory Meta.fromJson(Map<String, dynamic> json) => _$MetaFromJson(json);
+    factory GetSingleResponseModelMeta.fromJson(Map<String, dynamic> json) => _$GetSingleResponseModelMetaFromJson(json);
 
-    Map<String, dynamic> toJson() => _$MetaToJson(this);
+    Map<String, dynamic> toJson() => _$GetSingleResponseModelMetaToJson(this);
 }
 
 @JsonSerializable()
-class Review {
+class GetSingleResponseModelReview {
     @JsonKey(name: "rating")
     int? rating;
     @JsonKey(name: "comment")
@@ -136,7 +136,7 @@ class Review {
     @JsonKey(name: "reviewerEmail")
     String? reviewerEmail;
 
-    Review({
+    GetSingleResponseModelReview({
         this.rating,
         this.comment,
         this.date,
@@ -144,7 +144,7 @@ class Review {
         this.reviewerEmail,
     });
 
-    factory Review.fromJson(Map<String, dynamic> json) => _$ReviewFromJson(json);
+    factory GetSingleResponseModelReview.fromJson(Map<String, dynamic> json) => _$GetSingleResponseModelReviewFromJson(json);
 
-    Map<String, dynamic> toJson() => _$ReviewToJson(this);
+    Map<String, dynamic> toJson() => _$GetSingleResponseModelReviewToJson(this);
 }
